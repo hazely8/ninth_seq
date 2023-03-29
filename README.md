@@ -19,9 +19,9 @@
 ---
 
 * 圖1
-![](https://github.com/hazely8/ninth_seq/blob/main/img/pic2.png)
+![](https://github.com/hazely8/ninth_seq/blob/main/img/pic1.png)
 
 * 圖2
 <br/>
 
-![](https://github.com/hazely8/ninth_seq/blob/main/img/pic1.png)
+![](https://github.com/hazely8/ninth_seq/blob/main/img/pic2.png)
