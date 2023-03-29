@@ -1,4 +1,4 @@
-# ninth_seq
+# 九轉序列
 
 - [指標參考影片來源](https://www.youtube.com/watch?v=gd78FyjyY04&ab_channel=2140%E5%8A%A0%E5%AF%86%E7%A4%BE%E7%BE%A4)
 
