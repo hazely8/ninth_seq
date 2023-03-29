@@ -1,0 +1,37 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © hazely8
+
+//@version=5
+indicator("九轉序列", overlay = true)
+flag = input(title = "", inline = "1", defval = true)
+ninth_flag = input.string(title = '九轉序列', inline = "1", options = ["9 + 13", "9", "13"], defval = "9 + 13")
+
+var up_num = 0 //高
+var down_num = 0 //低
+
+//判斷是否滿足九轉條件
+if close - close[4] > 0
+    up_num += 1
+    down_num := 0
+else if close - close[4] < 0
+    down_num += 1
+    up_num := 0
+else
+    up_num := 0
+    down_num := 0
+
+plotshape(up_num == 7 and flag and (ninth_flag == "9 + 13" or ninth_flag == "9"), style = shape.labeldown, location = location.abovebar, color = color.rgb(79, 0, 0, 50), text = '7', textcolor = color.white, editable = false)
+plotshape(up_num == 8 and flag and (ninth_flag == "9 + 13" or ninth_flag == "9"), style = shape.labeldown, location = location.abovebar, color = color.rgb(79, 0, 0, 50), text = '8', textcolor = color.white, editable = false)
+plotshape(up_num == 9 and flag and (ninth_flag == "9 + 13" or ninth_flag == "9"), style = shape.labeldown, location = location.abovebar, color = color.red, text = '9', textcolor = color.white, editable = false)
+
+plotshape(up_num == 11 and flag and (ninth_flag == "9 + 13" or ninth_flag == "13"), style = shape.labeldown, location = location.abovebar, color = color.rgb(79, 0, 0, 50), text = '11', textcolor = color.white, editable = false)
+plotshape(up_num == 12 and flag and (ninth_flag == "9 + 13" or ninth_flag == "13"), style = shape.labeldown, location = location.abovebar, color = color.rgb(79, 0, 0, 50), text = '12', textcolor = color.white, editable = false)
+plotshape(up_num == 13 and flag and (ninth_flag == "9 + 13" or ninth_flag == "13"), style = shape.labeldown, location = location.abovebar, color = color.red, text = '13', textcolor = color.white, editable = false)
+
+plotshape(down_num == 7 and flag and (ninth_flag == "9 + 13" or ninth_flag == "9"), style = shape.labelup, location = location.belowbar, color = color.rgb(0, 79, 0, 50), text = '7', textcolor = color.white, editable = false)
+plotshape(down_num == 8 and flag and (ninth_flag == "9 + 13" or ninth_flag == "9"), style = shape.labelup, location = location.belowbar, color = color.rgb(0, 79, 0, 50), text = '8', textcolor = color.white, editable = false)
+plotshape(down_num == 9 and flag and (ninth_flag == "9 + 13" or ninth_flag == "9"), style = shape.labelup, location = location.belowbar, color = color.green, text = '9', textcolor = color.white, editable = false)
+
+plotshape(down_num == 11 and flag and (ninth_flag == "9 + 13" or ninth_flag == "13"), style = shape.labelup, location = location.belowbar, color = color.rgb(0, 79, 0, 50), text = '11', textcolor = color.white, editable = false)
+plotshape(down_num == 12 and flag and (ninth_flag == "9 + 13" or ninth_flag == "13"), style = shape.labelup, location = location.belowbar, color = color.rgb(0, 79, 0, 50), text = '12', textcolor = color.white, editable = false)
+plotshape(down_num == 13 and flag and (ninth_flag == "9 + 13" or ninth_flag == "13"), style = shape.labelup, location = location.belowbar, color = color.green, text = '13', textcolor = color.white, editable = false)
